@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript 基础知识(1)</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f7f8fa;
+      color: #1f2328;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1.2rem;
+    }
+    h1 {
+      font-size: 1.8rem;
+      border-bottom: 2px solid #d0d7de;
+      padding-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.3rem;
+      color: #0969da;
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      color: #24292f;
+    }
+    p, li {
+      font-size: 0.95rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    code {
+      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+      background: #f6f8fa;
+      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+    pre {
+      background: #f6f8fa;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      border: 1px solid #d0d7de;
+    }
+    pre code {
+      background: transparent;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+    .note {
+      background: #fff8c5;
+      border-left: 4px solid #d4a72c;
+      padding: 0.8rem 1rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1rem 0;
+      color: #4d3d00;
+    }
+  </style>
+</head>
+<body>
+  <h1>JavaScript 基础知识(1)</h1>
+  <p>本文档介绍 JavaScript 中的数据类型及其基本示例。</p>
+
+  <h2>一、JavaScript 数据类型</h2>
+  <p>JavaScript 数据类型分为两大类：<strong>原始类型（primitive types）</strong>和<strong>对象类型（object types）</strong>。</p>
+  <ul>
+    <li><strong>原始类型</strong>包括：字符串（String）、数字（Number）、布尔值（Boolean）、null、undefined 和 Symbol。</li>
+    <li><strong>对象类型</strong>包括：对象（Object）、数组（Array）和函数（Function）。</li>
+  </ul>
+
+  <h2>二、数据类型示例</h2>
+
+  <h3>1. 字符串类型（String）</h3>
+  <pre><code>let str = "Hello, World!"; // 声明一个字符串变量str，并赋值为"Hello, World!"
+console.log(str); // 输出变量str的值，结果是"Hello, World!"</code></pre>
+
+  <h3>2. 数字类型（Number）</h3>
+  <pre><code>let num = 42; // 声明一个数字变量num，并赋值为42
+console.log(num); // 输出变量num的值，结果是42</code></pre>
+
+  <h3>3. 布尔值类型（Boolean）</h3>
+  <pre><code>let isJavaScriptFun = true; // 声明一个布尔变量isJavaScriptFun，并赋值为true
+console.log(isJavaScriptFun); // 输出变量isJavaScriptFun的值，结果是true</code></pre>
+
+  <h3>4. null 类型</h3>
+  <pre><code>let emptyValue = null; // 声明一个变量emptyValue，并赋值为null，表示没有值
+console.log(emptyValue); // 输出变量emptyValue的值，结果是null</code></pre>
+
+  <h3>5. undefined 类型</h3>
+  <pre><code>let undefinedValue; // 声明一个变量undefinedValue，但没有赋值，默认值为undefined
+console.log(undefinedValue); // 输出变量undefinedValue的值，结果是undefined</code></pre>
+
+  <h3>6. 对象类型（Object）</h3>
+  <pre><code>let person = {
+  name: "Alice",
+  age: 25
+}; // 声明一个对象person，包含name和age两个属性
+console.log(person); // 输出对象person的值
+
+let arr = [1, 2, 3]; // 声明一个数组arr
+console.log(arr); // 输出数组arr的值
+
+function greet() {
+  return "Hello!";
+} // 声明一个函数greet
+console.log(greet); // 输出函数greet</code></pre>
+
+  <div class="note">
+    <strong>提示：</strong>使用 <code>typeof</code> 可以检测变量的数据类型，例如 <code>typeof "hello"</code> 返回 <code>"string"</code>。
+  </div>
+</body>
+</html>
