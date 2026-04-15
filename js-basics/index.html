@@ -1,281 +1,47 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JavaScript 基础速查</title>
-  <style>
-    :root {
-      --bg: #f7f8fa;
-      --card: #ffffff;
-      --text: #1f2328;
-      --muted: #57606a;
-      --accent: #0969da;
-      --border: #d0d7de;
-      --code-bg: #f6f8fa;
-    }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.7;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      background: rgba(255,255,255,0.92);
-      backdrop-filter: blur(8px);
-      border-bottom: 1px solid var(--border);
-      z-index: 10;
-    }
-    nav {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0.8rem 1.2rem;
-      display: flex;
-      gap: 1rem;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    nav a:hover { color: var(--accent); }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem 1.2rem 4rem;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 0.3rem;
-    }
-    .subtitle {
-      color: var(--muted);
-      margin-bottom: 2rem;
-    }
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 2.5rem;
-      margin-bottom: 0.8rem;
-      padding-bottom: 0.4rem;
-      border-bottom: 2px solid var(--border);
-    }
-    h3 {
-      font-size: 1.1rem;
-      margin-top: 1.6rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent);
-    }
-    p { margin: 0.6rem 0; }
-    ul { padding-left: 1.4rem; }
-    li { margin: 0.3rem 0; }
-    code {
-      font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-      background: var(--code-bg);
-      padding: 0.15rem 0.35rem;
-      border-radius: 4px;
-      font-size: 0.9em;
-      color: var(--text);
-    }
-    pre {
-      background: var(--code-bg);
-      padding: 1rem;
-      border-radius: 8px;
-      overflow-x: auto;
-      border: 1px solid var(--border);
-    }
-    pre code {
-      background: transparent;
-      padding: 0;
-      font-size: 0.9rem;
-    }
-    .tag {
-      display: inline-block;
-      padding: 0.1rem 0.5rem;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-right: 0.3rem;
-      background: #ddf4ff;
-      color: var(--accent);
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
-      font-size: 0.95rem;
-    }
-    th, td {
-      border: 1px solid var(--border);
-      padding: 0.6rem 0.8rem;
-      text-align: left;
-    }
-    th {
-      background: var(--code-bg);
-      font-weight: 600;
-    }
-    .note {
-      background: #fff8c5;
-      border-left: 4px solid #d4a72c;
-      padding: 0.8rem 1rem;
-      border-radius: 0 6px 6px 0;
-      margin: 1rem 0;
-      color: #4d3d00;
-    }
-    footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.85rem;
-      padding: 2rem;
-      border-top: 1px solid var(--border);
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <a href="#intro">概述</a>
-      <a href="#var">变量</a>
-      <a href="#types">数据类型</a>
-      <a href="#expr">表达式与流程</a>
-      <a href="#func">函数</a>
-    </nav>
-  </header>
+Ah , si je pouvais vivre dans l'eau ,
 
-  <main class="container">
-    <h1>JavaScript 基础速查</h1>
-    <p class="subtitle">变量 · 类型 · 表达式 · 流程控制 · 函数</p>
+啊，若化水复回归途
 
-    <section id="intro">
-      <h2>概述</h2>
-      <p>JavaScript 是一门<strong>动态类型</strong>、<strong>解释执行</strong>的脚本语言，主要用于网页交互，也可以在服务器端（Node.js）运行。它的核心语法简单，但灵活性极高。</p>
-      <ul>
-        <li>代码区分大小写</li>
-        <li>语句以分号 <code>;</code> 结尾（可省略，但建议保留）</li>
-        <li>使用 <code>//</code> 写单行注释，<code>/* */</code> 写多行注释</li>
-      </ul>
-    </section>
+le monde serait - il plus beau ?
 
-    <section id="var">
-      <h2>变量的定义</h2>
-      <p>JavaScript 有三种声明变量的关键字：</p>
-      <table>
-        <tr><th>关键字</th><th>作用域</th><th>能否重复声明</th><th>是否提升</th></tr>
-        <tr><td><code>var</code></td><td>函数级</td><td>能</td><td>是（初始化为 undefined）</td></tr>
-        <tr><td><code>let</code></td><td>块级</td><td>不能</td><td>是（暂时性死区）</td></tr>
-        <tr><td><code>const</code></td><td>块级</td><td>不能</td><td>是（必须初始化，不能重新赋值）</td></tr>
-      </table>
-      <pre><code>let name = "Alice";
-const age = 25;
-var isStudent = true;</code></pre>
-      <div class="note">现代开发中，优先使用 <code>const</code>，需要重新赋值时再用 <code>let</code>，尽量避免 <code>var</code>。</div>
-    </section>
+令故土朝暮如初
 
-    <section id="types">
-      <h2>数据类型</h2>
-      <p>JavaScript 有 <strong>7 种原始类型</strong>和 <strong>1 种引用类型</strong>：</p>
-      <h3>原始类型（Primitive）</h3>
-      <table>
-        <tr><th>类型</th><th>说明</th><th>示例</th></tr>
-        <tr><td><code>string</code></td><td>字符串</td><td><code>"hello"</code></td></tr>
-        <tr><td><code>number</code></td><td>数字（整数、浮点数、NaN、Infinity）</td><td><code>42, 3.14</code></td></tr>
-        <tr><td><code>boolean</code></td><td>布尔值</td><td><code>true, false</code></td></tr>
-        <tr><td><code>undefined</code></td><td>未定义</td><td><code>undefined</code></td></tr>
-        <tr><td><code>null</code></td><td>空值（表示"没有"）</td><td><code>null</code></td></tr>
-        <tr><td><code>symbol</code></td><td>唯一标识符（ES6）</td><td><code>Symbol('id')</code></td></tr>
-        <tr><td><code>bigint</code></td><td>大整数（ES2020）</td><td><code>123n</code></td></tr>
-      </table>
-      <h3>引用类型（Reference）</h3>
-      <p><span class="tag">object</span> 对象，包括普通对象、数组、函数、日期等。</p>
-      <pre><code>let obj = { name: "Alice", age: 25 };
-let arr = [1, 2, 3];
-let fn = function() {};</code></pre>
-      <div class="note">用 <code>typeof null</code> 会返回 <code>"object"</code>，这是历史遗留 bug。</div>
-    </section>
+Nous pardonneras - tu ,ô chère mère ?
 
-    <section id="expr">
-      <h2>表达式与流程控制</h2>
-      <h3>常用运算符</h3>
-      <ul>
-        <li>算术：<code>+  -  *  /  %  **</code></li>
-        <li>比较：<code>==  ===  !=  !==  >  <  >=  <=</code></li>
-        <li>逻辑：<code>&&  ||  !</code></li>
-        <li>赋值：<code>=  +=  -=  *=  /=</code></li>
-      </ul>
-      <div class="note"><code>===</code> 和 <code>!==</code> 比较值和类型，建议始终使用，避免隐式转换陷阱。</div>
+啊，母亲可否将我宽恕
 
-      <h3>条件语句</h3>
-      <pre><code>if (score >= 90) {
-  console.log("A");
-} else if (score >= 60) {
-  console.log("B");
-} else {
-  console.log("C");
-}
+L'eau dans son courant fait danser nos vies .
 
-// 三元运算符
-let result = age >= 18 ? "成年" : "未成年";</code></pre>
+向四季流溯，引万籁驰鹜
 
-      <h3>循环语句</h3>
-      <pre><code>for (let i = 0; i &lt; 5; i++) {
-  console.log(i);
-}
+Et la cité, elle nourrit .
+所过处百废复苏
 
-let j = 0;
-while (j &lt; 5) {
-  console.log(j);
-  j++;
-}
+Ainsi que toi , mon doux amour .
 
-const fruits = ["apple", "banana"];
-for (const fruit of fruits) {
-  console.log(fruit);
-}</code></pre>
-    </section>
+亦充盈挚爱的心湖
 
-    <section id="func">
-      <h2>函数</h2>
-      <p>函数是 JavaScript 的一等公民，有三种常见定义方式：</p>
-      <h3>1. 函数声明</h3>
-      <pre><code>function greet(name) {
-  return "Hello, " + name;
-}
-console.log(greet("Alice"));</code></pre>
+Non , le grand amour ne suffit pas .
 
-      <h3>2. 函数表达式</h3>
-      <pre><code>const add = function(a, b) {
-  return a + b;
-};</code></pre>
+爱，就像这酣梦深埋
 
-      <h3>3. 箭头函数（ES6）</h3>
-      <pre><code>const multiply = (a, b) => a * b;
+Seul un adieu fleurira .
 
-const square = x => x * x;
+诀别如繁花盛开
 
-// 多行需要写 return
-const sum = (a, b) => {
-  const result = a + b;
-  return result;
-};</code></pre>
+C'est notre histoire de vie ,douce et amère .
 
-      <h3>参数相关</h3>
-      <ul>
-        <li>参数少于定义：多余参数为 <code>undefined</code></li>
-        <li>参数多于定义：可用 <code>arguments</code> 对象或剩余参数 <code>...args</code> 获取</li>
-        <li>可设置默认值：<code>function greet(name = "Guest") {}</code></li>
-      </ul>
-    </section>
-  </main>
+似你我往怀，愉快悲哀
 
-  <footer>
-    Made with ♥ · JavaScript 基础速查
-  </footer>
-</body>
-</html>
+Moi , je suis et serai toujours là,
+
+爱，我会在过去未来
+
+à voir le monde et sa beauté.
+
+注视这世间精彩
+
+Et ça ne changera jamais , jamais ...
+
+一切从未改，未改…
